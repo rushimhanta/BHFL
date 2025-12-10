@@ -15,7 +15,7 @@ def get_mysql_secret(secret_name, region="ap-south-1"):
     response = client.get_secret_value(SecretId=secret_name)
     secret = response["SecretString"]
     return json.loads(secret)
-  secret = get_mysql_secret("my-mysql-secret")
+secret = get_mysql_secret("my-mysql-secret")
 
 username = secret["username"]
 password = secret["password"]
