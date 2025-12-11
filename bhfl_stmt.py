@@ -6,7 +6,7 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 from sqlalchemy import create_engine
 def get_mysql_secret(secret_name, region="ap-south-1"):
-    secret_name = "mangesh-mysql-secrets"
+    secret_name = "rushi-secretes"
     session = boto3.session.Session()
     client = session.client(
         service_name='secretsmanager',
