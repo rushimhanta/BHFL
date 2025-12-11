@@ -65,7 +65,7 @@ df["phone_no"] = df["phone_no"].apply(mask_phone)
 df["panid"] = df["panid"].apply(mask_pan)
 df.drop(columns=["status","txn_type"],inplace=True)
 s3 = boto3.client("s3")
-bucket = "samir-database-s3"
+bucket = "bhfl-bank-transformed"
 for cust_id, cust_df in df.groupby("customer_id"):
     table = pa.Table.from_pandas(cust_df)
     key = f"transactions/month={start_date.strftime('%Y-%m')}/cust_id={cust_id}/data.parquet"
